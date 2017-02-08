@@ -18,6 +18,7 @@ class NewsController{
        if ($id) {
            $newsItem = News::GetNewsById($id);
            // echo '<pre>';print_r($newsItem);echo '</pre>';
+            require_once(ROOT.'/views/news/article.php');
        } 
         return true;
     }

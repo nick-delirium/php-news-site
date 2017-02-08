@@ -4,29 +4,28 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>News !?</title>
+<title><?php $newsItem['title'];?> </title>
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href="/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
-
-
+ 
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
     
-					 <?php foreach ($newsList as $newsItem):?>
+					 
 					<div class="post">
-						<h2 class="title"><?php echo $newsItem['title'];?> </h2>
+						<h2 class="title"><?php echo $newsItem['title'];?></h2>
 						<p class='byline'><?php echo $newsItem['date'];?></p>
-                        <p class="meta"><a href="#">Posted by
-                            <?php echo $newsItem['author_name'];?></a> </p>
-                           <p class='text'> <?php echo $newsItem['short_content'];?> </p>
+                        <p class="meta">Posted by
+                            <?php echo $newsItem['author_name'];?></p>
+                            <p class='text'> <?php echo $newsItem['content'];?> </p>
                         <div class='meta'>
-                        <p><a href="/news/id=<?php echo $newsItem['id'];?>" class='comments'>Read more >> </a></p>
+                        <p><a href="/news/" class='comments'><< back to all news </a></p>
                             </div>
 					</div>
-				    <?php endforeach;?>
+				    
                     
 					<div style="clear: both;"> <p>&nbsp; </p></div>
 				</div>

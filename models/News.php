@@ -14,14 +14,14 @@ class News
             $result->setFetchMode(PDO::FETCH_ASSOC);
                 
             $newsItem = $result->fetch();
-            print_r($newsItem);
+//            print_r($newsItem);
             return $newsItem;
         }
     }
     
     public static function getNewsList()
     {
-        
+    
        $db = Db::dbConnect();
         
         $newsList = [];
@@ -38,6 +38,7 @@ class News
             $newsList[$i]['author_name'] = $row['author_name'];
             $i++;
         }
+       
         return $newsList;
 
         

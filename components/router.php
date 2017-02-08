@@ -9,6 +9,7 @@ class Router
         $routesPath=ROOT.'/config/routes.php';
         $this->routes = include($routesPath);
     }
+    
     /* get request as link == string : true */
     private function getURI()
     {
@@ -29,7 +30,6 @@ class Router
             /* compare $uriPattern and $uri */
             if (preg_match("~$uriPattern~", $uri)) {
     
-            
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
                 /*take Controller and Action name from URI */
@@ -45,10 +45,11 @@ class Router
                 echo '<br>controller name: '.$controllerName;
                 echo '<br>action name: '.$actionName.'<br>';
                 echo '<pre>';
-                print_r($segments);*/
+                print_r($segments);
+               */
                 
                 
-                // if true, connect controller for this class
+                //  connect controller for this class
                 $controllerFile = ROOT.'/controllers/' . $controllerName . '.php';
                 
                 if (file_exists($controllerFile)) {
